@@ -1,0 +1,1214 @@
+<!doctype html>
+
+<html class="light" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#004e5c",
+              "on-primary-fixed-variant": "#005236",
+              "on-primary-fixed": "#002113",
+              "tertiary-fixed-dim": "#ffb95f",
+              "on-tertiary-fixed": "#2a1700",
+              secondary: "#00687a",
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed-variant": "#653e00",
+              "tertiary-fixed": "#ffddb8",
+              tertiary: "#855300",
+              error: "#ba1a1a",
+              "secondary-fixed": "#acedff",
+              "on-tertiary": "#ffffff",
+              "inverse-on-surface": "#ffedec",
+              "inverse-surface": "#4c2526",
+              "on-secondary-container": "#006172",
+              "secondary-fixed-dim": "#4cd7f6",
+              outline: "#6c7a71",
+              "on-surface-variant": "#3c4a42",
+              "on-secondary-fixed": "#001f26",
+              "outline-variant": "#bbcabf",
+              surface: "#fff8f7",
+              primary: "#006c49",
+              "surface-container-highest": "#ffdad9",
+              "on-primary-container": "#00422b",
+              "primary-fixed": "#6ffbbe",
+              "on-error": "#ffffff",
+              "surface-bright": "#fff8f7",
+              "on-primary": "#ffffff",
+              "error-container": "#ffdad6",
+              "surface-container": "#ffe9e8",
+              "on-secondary": "#ffffff",
+              "inverse-primary": "#4edea3",
+              "primary-container": "#10b981",
+              "surface-dim": "#ffcece",
+              background: "#fff8f7",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#ffe1e1",
+              "on-tertiary-container": "#523200",
+              "surface-tint": "#006c49",
+              "surface-variant": "#ffdad9",
+              "tertiary-container": "#e29100",
+              "surface-container-low": "#fff0ef",
+              "primary-fixed-dim": "#4edea3",
+              "on-surface": "#331012",
+              "secondary-container": "#57dffe",
+              "on-background": "#331012",
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              sm: "0.25rem",
+              md: "0.75rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              display: ["Manrope"],
+              body: ["Plus Jakarta Sans"],
+              label: ["Manrope"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+      }
+
+      .premium-shadow {
+        box-shadow: 0 10px 40px -10px rgba(0, 108, 73, 0.08);
+      }
+
+      .glass-nav {
+        background: rgba(255, 248, 247, 0.85);
+        backdrop-filter: blur(12px);
+      }
+
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .active-nav-border {
+        position: relative;
+      }
+      .active-nav-border::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #006c49;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background text-on-background font-body min-h-screen flex flex-col"
+  >
+    <!-- TopNavBar -->
+    <header
+      class="glass-nav fixed top-0 left-0 right-0 z-50 border-b border-outline-variant/30 shadow-sm"
+    >
+      <nav
+        class="flex justify-between items-center w-full px-5 md:px-16 py-4 max-w-[1280px] mx-auto"
+      >
+        <div class="flex items-center gap-3">
+          <a
+            href="index.html"
+            class="flex items-center gap-3 active:scale-95 transition-transform"
+          >
+            <!-- Logo de la tienda -->
+            <img
+              src="Logo.png"
+              alt="VITALITH Logo"
+              class="h-8 md:h-10 w-auto object-contain"
+            />
+
+            <!-- Nombre VITALITH -->
+            <span
+              class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold tracking-tight text-primary"
+            >
+              VITALITH
+            </span>
+          </a>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a
+            class="font-label text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors"
+            href="index.html"
+            >Inicio</a
+          >
+          <a
+            class="font-label text-sm font-semibold text-primary border-b-2 border-primary pb-1"
+            href="index.html#catalogo"
+            >Catálogo</a
+          >
+          <a
+            class="font-label text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors"
+            href="index.html#resenas"
+            >Reseñas</a
+          >
+          <a
+            class="font-label text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors"
+            href="index.html#nosotros"
+            >Nosotros</a
+          >
+          <a
+            class="font-label text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors"
+            href="index.html#contacto"
+            >Contacto</a
+          >
+        </div>
+
+        <!-- Trailing Actions -->
+        <div class="flex items-center space-x-4">
+          <a
+            href="carrito.html"
+            class="relative p-2 hover:bg-primary/5 rounded-full transition-all flex items-center justify-center"
+          >
+            <span class="material-symbols-outlined text-primary"
+              >shopping_cart</span
+            >
+            <span
+              id="cart-count"
+              class="absolute -top-1 -right-1 bg-tertiary text-on-tertiary text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center hidden"
+            >
+              0
+            </span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main
+      class="flex-grow pt-24 pb-16 px-5 md:px-16 max-w-[1280px] mx-auto w-full"
+    >
+      <!-- Breadcrumb -->
+      <nav
+        class="mb-8 flex items-center space-x-2 text-sm font-label text-on-surface-variant/70"
+      >
+        <a class="hover:text-primary transition-colors" href="index.html"
+          >Inicio</a
+        >
+        <span class="material-symbols-outlined text-xs">chevron_right</span>
+        <a
+          class="hover:text-primary transition-colors"
+          href="index.html#catalogo"
+          >Catálogo</a
+        >
+        <span class="material-symbols-outlined text-xs">chevron_right</span>
+        <span id="breadcrumb-product-name" class="text-on-surface font-semibold"
+          >Ojo de Tigre</span
+        >
+      </nav>
+
+      <!-- Product Hero Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        <!-- Product Gallery (LHS) -->
+        <div class="lg:col-span-7 grid grid-cols-4 gap-4 h-fit">
+          <!-- Main Focus Image -->
+          <div
+            class="col-span-4 aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low premium-shadow group"
+          >
+            <img
+              id="main-product-image"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkRSX_1qvYQfxMRHPZqkmvUkw0z81rFzclGvWw4aag8jDOceRg-mv3o_3A3yUX3QU3ZTTXSA_mzRNQJN8AYLXRqoRDlKXoXrUXB8Wua2m3Xtj5jg04vTd3YiDI4IbsvpJ8vxjoq0jI_ovibpwXCRxoOkWkrqD-LV2aPoqGU3DTU8YNeXDox-Kc5gDBc5nBoJPnwh2wR0JmLdznMZmHv9bnOz5PYJknSqO5CoaIwVvjtly01Licv0swmy372LrBKxXHgDVvCEo9fEwu"
+            />
+          </div>
+          <!-- Thumbnails -->
+          <div
+            onclick="changeMainImage(this)"
+            class="aspect-square rounded-lg overflow-hidden border-2 border-primary bg-surface-container cursor-pointer"
+          >
+            <img
+              id="thumb-1"
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgih4chX1674JhhFt9eWp6H2xLBwsNDCI8FreTA3I9jBGnykx052p8rec6B5mu0cBRswAJp-nslp2RAMUTumFRZmEaOGissHBTb2uLxBTN8nz2imggxyWCmoDGaerqifbV73HbNiFGq0YSo0zW9nSWjgVqHgiNDh2mMZ0n501zEPB57IJyCJ7PqyHue6dBeghdNKn0k0maZq2NbzjImWdH0P20pZrboB7nLXQg8t2LT4M0qTZN0yIcJccIaXMAb8px7pZ0H_AM74j4"
+            />
+          </div>
+          <div
+            onclick="changeMainImage(this)"
+            class="aspect-square rounded-lg overflow-hidden border border-outline-variant/20 bg-surface-container hover:border-primary transition-colors cursor-pointer"
+          >
+            <img
+              id="thumb-2"
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDudLs0mLyTJsVkJ6OoSFADtUwpy1wyseTImCDgEp2xDd-gBWzPmo_pnwzebhgUcmPe4O5J9AwOntKOuzyL72pfanrSl0O6k__92kH7yUAo8iwJElz3OSvrGoerS674xjCuQeGLB_P6K6vzk9i22TqgJfGSqge45D58eO7elMQiFmc4Z5ekFa5-VK3tA_vI-d01PpSVlvWYpTyGoOAFf9HOYZJ2EW4hnoYbp1KUSDBbB4s0bBxTWyz-5YhZGok0RwBvp6Ji0d3tOhMy"
+            />
+          </div>
+          <div
+            onclick="changeMainImage(this)"
+            class="aspect-square rounded-lg overflow-hidden border border-outline-variant/20 bg-surface-container hover:border-primary transition-colors cursor-pointer"
+          >
+            <img
+              id="thumb-3"
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGF7W4JBF3iLxHSWUoTYNkEeiK2rSm7cvqhLCCIWRnKJ0_DihTu_tqS4Sicq1Kj0Lr8K8z7nFBWaJ6yYkWsOFhTM8GgrYG4k5LCRcCW_Umc2iIYvAWb7yfSA_zcZ4qyFPIv4ef89LYqklAHRJoMf_TZBVWYaSZWe5neFUOTV1BbinZZR8QIDicetQuiNxj-yUpgVI8rpx9D-Fzf7wQ8a-ndTfdMHJAUD8hLS4TK5OlrXNw9IthvL-fIeUKcwOid5kqjZRC2JuarFeR"
+            />
+          </div>
+        </div>
+
+        <!-- Product Details (RHS) -->
+        <div class="lg:col-span-5 flex flex-col space-y-6">
+          <div>
+            <div class="flex items-center space-x-2 mb-3">
+              <span
+                class="bg-primary/10 text-primary font-label text-[10px] tracking-widest uppercase font-bold px-2 py-1 rounded"
+                >Hecho a Mano</span
+              >
+              <span
+                id="product-tag"
+                class="bg-secondary/10 text-secondary font-label text-[10px] tracking-widest uppercase font-bold px-2 py-1 rounded"
+                >Protección</span
+              >
+            </div>
+            <h1
+              id="product-title"
+              class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight"
+            >
+              Ojo de Tigre
+            </h1>
+            <div class="flex items-center mt-2 space-x-1">
+              <span
+                class="material-symbols-outlined text-tertiary text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-tertiary text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-tertiary text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-tertiary text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-tertiary text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star_half</span
+              >
+              <span
+                id="product-reviews"
+                class="text-xs font-label text-on-surface-variant ml-2"
+                >(48 Reseñas)</span
+              >
+            </div>
+          </div>
+
+          <div
+            id="product-price"
+            class="text-primary font-headline text-3xl font-bold"
+          >
+            S/ 40.00
+          </div>
+
+          <div class="space-y-4 border-y border-outline-variant/20 py-6">
+            <p
+              id="product-short-desc"
+              class="font-body text-body-md text-on-surface-variant leading-relaxed"
+            >
+              Pulsera artesanal diseñada para quienes buscan
+              <span class="text-primary font-semibold"
+                >protección y confianza</span
+              >. Elaborada con cuentas seleccionadas de Ojo de Tigre de 10mm,
+              esta pieza ayuda a enfocar la mente y atraer la buena fortuna en
+              cada paso.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start space-x-3">
+                <span class="material-symbols-outlined text-primary text-xl"
+                  >check_circle</span
+                >
+                <span id="spec-1" class="text-body-md font-body"
+                  >Piedra: Ojo de Tigre Natural de 10mm</span
+                >
+              </li>
+              <li class="flex items-start space-x-3">
+                <span class="material-symbols-outlined text-primary text-xl"
+                  >check_circle</span
+                >
+                <span id="spec-2" class="text-body-md font-body"
+                  >Tejido: Hilo encerado de alta durabilidad</span
+                >
+              </li>
+              <li class="flex items-start space-x-3">
+                <span class="material-symbols-outlined text-primary text-xl"
+                  >check_circle</span
+                >
+                <span id="spec-3" class="text-body-md font-body"
+                  >Ajustable: Sistema de nudo corredizo</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Selectors -->
+          <div class="grid grid-cols-2 gap-4">
+            <div class="space-y-2">
+              <label
+                class="font-label text-xs font-bold uppercase tracking-wider text-on-surface-variant"
+                >Cantidad</label
+              >
+              <div
+                class="flex items-center border border-outline rounded-lg h-12"
+              >
+                <button
+                  class="w-12 h-full flex items-center justify-center hover:bg-surface-container transition-colors"
+                  onclick="decrement()"
+                >
+                  <span class="material-symbols-outlined">remove</span>
+                </button>
+                <input
+                  class="w-full text-center border-none bg-transparent font-bold focus:ring-0"
+                  id="quantity"
+                  readonly=""
+                  type="number"
+                  value="1"
+                />
+                <button
+                  class="w-12 h-full flex items-center justify-center hover:bg-surface-container transition-colors"
+                  onclick="increment()"
+                >
+                  <span class="material-symbols-outlined">add</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col space-y-3 pt-4">
+            <button
+              onclick="addToCart(false)"
+              class="w-full bg-primary text-on-primary font-headline font-bold py-4 rounded-lg flex items-center justify-center space-x-2 transition-all hover:shadow-lg hover:-translate-y-0.5 active:scale-95"
+            >
+              <span class="material-symbols-outlined">shopping_bag</span>
+              <span>Añadir al Carrito</span>
+            </button>
+
+            <button
+              onclick="buyNowDirect()"
+              class="w-full border-2 border-tertiary text-tertiary font-headline font-bold py-4 rounded-lg transition-all hover:bg-tertiary/5 active:scale-95"
+            >
+              Comprar Ahora
+            </button>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="grid grid-cols-3 gap-2 pt-6">
+            <div
+              class="flex flex-col items-center text-center p-3 rounded-lg bg-surface-container-low border border-outline-variant/10"
+            >
+              <span class="material-symbols-outlined text-primary mb-1"
+                >local_shipping</span
+              >
+              <span
+                class="font-label text-[10px] font-bold text-on-surface-variant"
+                >Envío Rápido</span
+              >
+            </div>
+            <div
+              class="flex flex-col items-center text-center p-3 rounded-lg bg-surface-container-low border border-outline-variant/10"
+            >
+              <span class="material-symbols-outlined text-primary mb-1"
+                >verified_user</span
+              >
+              <span
+                class="font-label text-[10px] font-bold text-on-surface-variant"
+                >Calidad Cert.</span
+              >
+            </div>
+            <div
+              class="flex flex-col items-center text-center p-3 rounded-lg bg-surface-container-low border border-outline-variant/10"
+            >
+              <span class="material-symbols-outlined text-primary mb-1"
+                >eco</span
+              >
+              <span
+                class="font-label text-[10px] font-bold text-on-surface-variant"
+                >Artesanal</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Extra Details Tabs -->
+      <div class="mt-20 border-t border-outline-variant/20 pt-12">
+        <div
+          class="flex space-x-8 border-b border-outline-variant/20 mb-8 overflow-x-auto no-scrollbar"
+        >
+          <button
+            onclick="showTab('energetica', this)"
+            class="pb-4 font-headline font-bold text-primary border-b-2 border-primary whitespace-nowrap"
+          >
+            Propiedades Energéticas
+          </button>
+          <button
+            onclick="showTab('especificaciones', this)"
+            class="pb-4 font-headline font-bold text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap"
+          >
+            Especificaciones
+          </button>
+          <button
+            onclick="showTab('cuidado', this)"
+            class="pb-4 font-headline font-bold text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap"
+          >
+            Cuidado de Joyería
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <h3
+              id="tab-title"
+              class="font-headline text-2xl font-bold text-on-surface"
+            >
+              Energía y Vitalidad
+            </h3>
+            <p
+              id="tab-p1"
+              class="font-body text-on-surface-variant leading-relaxed"
+            >
+              El Ojo de Tigre es una piedra de protección que también puede
+              traer buena suerte al portador. Tiene el poder de enfocar la
+              mente, promoviendo la claridad mental, permitiéndonos resolver
+              problemas de manera objetiva y sin nublarnos por las emociones.
+            </p>
+            <p
+              id="tab-p2"
+              class="font-body text-on-surface-variant leading-relaxed"
+            >
+              Particularmente útil para curar enfermedades psicosomáticas,
+              disipar el miedo y la ansiedad. Útil para reconocer las propias
+              necesidades en relación con las necesidades de los demás.
+            </p>
+          </div>
+          <div
+            class="rounded-xl overflow-hidden aspect-video bg-surface-container-highest relative"
+          >
+            <img
+              id="tab-energetica-img"
+              src="generico.png"
+              alt="Energía"
+              class="w-full h-full object-cover rounded-2xl"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end p-6"
+            >
+              <p
+                id="tab-quote"
+                class="text-white font-label text-sm font-semibold italic"
+              >
+                "Atrae la abundancia y el equilibrio emocional."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-surface-container-low border-t border-outline-variant/30 py-12 mt-20"
+    >
+      <div
+        class="max-w-[1280px] mx-auto px-5 md:px-16 grid grid-cols-1 md:grid-cols-4 gap-8"
+      >
+        <div>
+          <h3 class="font-headline text-xl font-bold text-primary mb-3">
+            VITALITH
+          </h3>
+          <p class="font-body text-sm text-on-surface-variant leading-relaxed">
+            © 2024 VITALITH. Artesanía en Piedras Naturales. Creando piezas que
+            conectan tu energía con la tierra.
+          </p>
+        </div>
+
+        <div>
+          <h4
+            class="font-headline text-sm font-bold text-on-surface uppercase tracking-wider mb-3"
+          >
+            NUESTRAS REDES
+          </h4>
+          <ul class="space-y-2 font-body text-sm text-on-surface-variant">
+            <li>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-primary transition-colors flex items-center space-x-1"
+                ><span>Instagram</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://tiktok.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-primary transition-colors flex items-center space-x-1"
+                ><span>TikTok</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://wa.me/51900000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-primary transition-colors flex items-center space-x-1"
+                ><span>WhatsApp</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4
+            class="font-headline text-sm font-bold text-on-surface uppercase tracking-wider mb-3"
+          >
+            PAGOS
+          </h4>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-3 py-1 bg-surface rounded text-xs text-on-surface-variant border border-outline-variant/30"
+              >Tarjeta</span
+            >
+            <span
+              class="px-3 py-1 bg-surface rounded text-xs text-on-surface-variant border border-outline-variant/30"
+              >Yape</span
+            >
+            <span
+              class="px-3 py-1 bg-surface rounded text-xs text-on-surface-variant border border-outline-variant/30"
+              >Plin</span
+            >
+          </div>
+        </div>
+
+        <div>
+          <h4
+            class="font-headline text-sm font-bold text-on-surface uppercase tracking-wider mb-3"
+          >
+            BOLETÍN INFORMATIVO
+          </h4>
+          <form onsubmit="subscribeNewsletter(event)" class="flex items-center">
+            <input
+              type="email"
+              id="newsletter-email"
+              placeholder="Tu correo electrónico"
+              required
+              class="w-full px-4 py-2 rounded-l-full bg-surface-container border border-outline-variant/40 text-sm focus:outline-none focus:border-primary text-on-surface placeholder:text-on-surface-variant/60"
+            />
+            <button
+              type="submit"
+              class="bg-primary text-on-primary px-4 py-2 rounded-r-full hover:bg-primary/90 transition-colors flex items-center justify-center"
+              title="Suscribirse"
+            >
+              <span class="material-symbols-outlined text-sm">send</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // ==========================================
+      // BASE DE DATOS DE PRODUCTOS
+      // Puedes agregar o cambiar imágenes, precios y textos aquí
+      // ==========================================
+      const catalogProducts = [
+        {
+          id: "ojo-de-tigre",
+          title: "Ojo de Tigre",
+          price: 40.0,
+          tag: "Protección",
+          reviews: "(48 Reseñas)",
+          images: [
+            "imagenesproducto/Ojo de Tigre/Ojo de tigre.png",
+            "imagenesproducto/Ojo de Tigre/1.png",
+            "imagenesproducto/Ojo de Tigre/3.jpg",
+            "imagenesproducto/Ojo de Tigre/4.jpg",
+          ],
+          shortDesc:
+            'Pulsera artesanal diseñada para quienes buscan <span class="text-primary font-semibold">protección y confianza</span>. Elaborada con cuentas seleccionadas de Ojo de Tigre de 10mm, esta pieza ayuda a enfocar la mente y atraer la buena fortuna en cada paso.',
+          specs: [
+            "Piedra: Ojo de Tigre Natural de 10mm",
+            "Tejido: Hilo encerado de alta durabilidad",
+            "Ajustable: Sistema de nudo corredizo",
+          ],
+          tabs: {
+            energetica: {
+              title: "Energía y Vitalidad",
+              p1: "El Ojo de Tigre es una piedra de protección que también puede traer buena suerte al portador. Tiene el poder de enfocar la mente, promoviendo la claridad mental, permitiéndonos resolver problemas de manera objetiva.",
+              p2: "Particularmente útil para curar emociones negativas, disipar el miedo y la ansiedad. Útil para reconocer las propias necesidades en relación con las necesidades de los demás.",
+              quote: '"Atrae la abundancia y el equilibrio emocional."',
+            },
+            especificaciones: {
+              title: "Especificaciones Técnicas",
+              p1: "Cada pulsera está tejida a mano utilizando minerales 100% naturales importados de canteras seleccionadas. Las piedras de 10mm son pulidas artesanalmente.",
+              p2: "El hilo encerado garantiza máxima resistencia al agua y al uso diario. Cuenta con un nudo corredizo adaptable a muñecas desde los 15 cm hasta los 22 cm.",
+              quote: '"Calidad artesanal diseñada para durar."',
+            },
+            cuidado: {
+              title: "Cuidado y Limpieza",
+              p1: "Para mantener la energía de tu cuarzo limpia, puedes colocarlo cerca de un humo de Palo Santo o Salvia Blanca durante 1 minuto una vez a la semana.",
+              p2: "Para la limpieza física, usa un paño suave ligeramente húmedo. Evita exponer la pieza a químicos agresivos, perfumes directos o sumergirla en agua con sal.",
+              quote: '"Manten la pureza y vibración de tus minerales."',
+            },
+          },
+        },
+        {
+          id: "cuarzo-rosa",
+          title: "Cuarzo Rosa",
+          price: 40.0,
+          tag: "Amor Propio",
+          reviews: "(32 Reseñas)",
+          images: [
+            "imagenesproducto/Cuarzo Rosado/cuarzo rosa.png",
+            "imagenesproducto/Cuarzo Rosado/1.png",
+            "imagenesproducto/Cuarzo Rosado/3.jpg",
+          ],
+          shortDesc:
+            'Pulsera artesanal enfocada en el <span class="text-primary font-semibold">amor incondicional y la paz interior</span>. Cuentas naturales pulidas de Cuarzo Rosa que estimulan la sanación emocional y la compasión.',
+          specs: [
+            "Piedra: Cuarzo Rosa Natural de 10mm",
+            "Tejido: Hilo encerado de alta resistencia",
+            "Ajustable: Sistema de nudo corredizo",
+          ],
+          tabs: {
+            energetica: {
+              title: "Amor y Sanación",
+              p1: "El Cuarzo Rosa es la piedra del amor incondicional y la paz infinita. Es el mineral más importante para el corazón y el chakra del corazón.",
+              p2: "Sana las heridas emocionales, fortalece la autoestima y abre el espíritu a la armonía y la aceptación.",
+              quote: '"Abre tu corazón a la armonía incondicional."',
+            },
+            especificaciones: {
+              title: "Especificaciones Técnicas",
+              p1: "Selección de gemas rosadas sin tratamientos químicos agresivos. Pulido suave al tacto.",
+              p2: "Tejido reforzado ideal para uso diario continuo.",
+              quote: '"Artesanía delicada pero resistente."',
+            },
+            cuidado: {
+              title: "Cuidado y Limpieza",
+              p1: "Límpialo energéticamente bajo la luz de la luna llena durante la noche.",
+              p2: "Evita exponerlo al sol directo por largos periodos para mantener la intensidad de su tono rosado.",
+              quote: '"Protege la dulzura natural de tu gema."',
+            },
+          },
+        },
+        {
+          id: "agata",
+          title: "Ágata",
+          price: 40.0,
+          tag: "Equilibrio y Armonía",
+          reviews: "(28 Reseñas)",
+          images: [
+            "imagenesproducto/Ágata/agata.png",
+            "imagenesproducto/Ágata/1.jpeg",
+            "imagenesproducto/Ágata/3.jpg",
+          ],
+          shortDesc:
+            'Pulsera artesanal enfocada en el <span class="text-primary font-semibold">equilibrio emocional y la estabilidad</span>. Cuentas naturales de Ágata que aportan serenidad, confianza y arraigo.',
+          specs: [
+            "Piedra: Ágata Natural de 10mm",
+            "Tejido: Hilo encerado de alta resistencia",
+            "Ajustable: Sistema de nudo corredizo",
+          ],
+          tabs: {
+            energetica: {
+              title: "Equilibrio y Protección",
+              p1: "El Ágata es conocida como la piedra de la armonía y el asentamiento. Ayuda a equilibrar el yin y el yang, aportando una gran fuerza física y emocional.",
+              p2: "Sana la rabia interna, fomenta el amor y la valentía para empezar de nuevo, e infunde una sensación de calma y seguridad.",
+              quote:
+                '"Transforma las energías negativas en estabilidad y paz interior."',
+            },
+            especificaciones: {
+              title: "Especificaciones Técnicas",
+              p1: "Selección de cuentas de Ágata de origen natural con patrones y vetas únicas. Pulido fino de alta durabilidad.",
+              p2: "Tejido reforzado concebido para resistir el uso diario sin perder ajuste.",
+              quote:
+                '"Piedra natural auténtica, resistente y con personalidad única."',
+            },
+            cuidado: {
+              title: "Cuidado y Limpieza",
+              p1: "Límpiala energéticamente pasándola por el humo de palo santo o salvia blanca.",
+              p2: "Para la limpieza física, usa solo un paño suave ligeramente húmedo. Evita químicos o perfumes directos sobre la piedra.",
+              quote: '"Conserva su brillo natural con cuidados suaves."',
+            },
+          },
+        },
+        {
+          id: "amatista",
+          title: "Amatista",
+          price: 40.0,
+          tag: "Paz y Transmutación",
+          reviews: "(35 Reseñas)",
+          images: [
+            "imagenesproducto/Amatista/amatista.png",
+            "imagenesproducto/Amatista/1.png",
+            "imagenesproducto/Amatista/3.jpg",
+            "imagenesproducto/Amatista/4.jpg",
+          ],
+          shortDesc:
+            'Pulsera artesanal enfocada en la <span class="text-primary font-semibold">tranquilidad mental y la intuición</span>. Cuentas naturales de Amatista que ayudan a calmar la mente y transmutar energías.',
+          specs: [
+            "Piedra: Amatista Natural de 10mm",
+            "Tejido: Hilo encerado de alta resistencia",
+            "Ajustable: Sistema de nudo corredizo",
+          ],
+          tabs: {
+            energetica: {
+              title: "Paz Interior e Intuición",
+              p1: "La Amatista es una piedra altamente protectora con una elevada vibración espiritual. Calma la mente, alivia el estrés y ayuda a conciliar el sueño reparador.",
+              p2: "Transmuta las energías negativas en amor y estimula los chakras del tercer ojo y de la corona, potenciando la intuición y la meditación.",
+              quote:
+                '"Serena tus pensamientos y transforma la energía a tu alrededor."',
+            },
+            especificaciones: {
+              title: "Especificaciones Técnicas",
+              p1: "Selección de cuarzos violetas naturales de intenso color. Pulido fino que resalta la belleza del cristal.",
+              p2: "Tejido artesanal reforzado, diseñado para resistir el uso diario con elegancia.",
+              quote: '"Artesanía mística y duradera."',
+            },
+            cuidado: {
+              title: "Cuidado y Limpieza",
+              p1: "Para mantener la intensidad de su tono violeta, evita exponerla directamente a la luz del sol intensa por largos periodos.",
+              p2: "Límpiala energéticamente dejándola reposar cerca de una drusa de cuarzo o bajo la luz de la luna.",
+              quote:
+                '"Protege su color y vibración espiritual con cuidado delicado."',
+            },
+          },
+        },
+        {
+          id: "coral-rojo",
+          title: "Coral Rojo",
+          price: 40.0,
+          tag: "Vitalidad y Pasión",
+          reviews: "(20 Reseñas)",
+          images: [
+            "imagenesproducto/Coral Rojo/coral rojo.png",
+            "imagenesproducto/Coral Rojo/1.png",
+            "imagenesproducto/Coral Rojo/3.jpg",
+          ],
+          shortDesc:
+            'Pulsera artesanal enfocada en la <span class="text-primary font-semibold">vitalidad, la fuerza y la pasión</span>. Cuentas naturales de Coral Rojo que estimulan la energía vital y la confianza.',
+          specs: [
+            "Piedra: Coral Rojo Orgánico/Natural de 10mm",
+            "Tejido: Hilo encerado de alta resistencia",
+            "Ajustable: Sistema de nudo corredizo",
+          ],
+          tabs: {
+            energetica: {
+              title: "Vitalidad y Fuerza Organica",
+              p1: "El Coral Rojo es un elemento orgánico marino reconocido por aportar un impulso directo de fuerza vital y dinamismo. Ayuda a vencer la apatía, el cansancio y estimula el coraje.",
+              p2: "Conectado al chakra raíz, fortalece los cimientos emocionales, infunde confianza en uno mismo y despierta el entusiasmo en el día a día.",
+              quote:
+                '"Activa tu fuerza interior y despierta tu verdadera pasión."',
+            },
+            especificaciones: {
+              title: "Especificaciones Técnicas",
+              p1: "Cuentas de Coral Rojo seleccionadas por su intenso tono y brillo. Pulido fino artesanal que respeta su naturaleza marina.",
+              p2: "Tejido reforzado para soportar el uso continuo manteniendo la comodidad.",
+              quote: '"Belleza de origen marino con confección duradera."',
+            },
+            cuidado: {
+              title: "Cuidado y Limpieza",
+              p1: "Al ser un material de origen orgánico, debes mantenerlo alejado de perfumes, cremas, alcohol o productos químicos fuertes.",
+              p2: "Límpialo suavemente con un paño levemente humedecido con agua dulce y déjalo secar a la sombra.",
+              quote:
+                '"Trátalo con la delicadeza propia del mar para mantener su brillo."',
+            },
+          },
+        },
+        {
+          id: "jade",
+          title: "Jade",
+          price: 40.0,
+          tag: "Abundancia y Salud",
+          reviews: "(29 Reseñas)",
+          images: [
+            "imagenesproducto/Jade/jade.png",
+            "imagenesproducto/Jade/1.png",
+            "imagenesproducto/Jade/3.jpg",
+            "imagenesproducto/Jade/4.jpg",
+          ],
+          shortDesc:
+            'Pulsera artesanal enfocada en la <span class="text-primary font-semibold">prosperidad, la salud y la sabiduría</span>. Cuentas naturales de Jade que atraen la buena suerte y la armonía.',
+          specs: [
+            "Piedra: Jade Natural de 10mm",
+            "Tejido: Hilo encerado de alta resistencia",
+            "Ajustable: Sistema de nudo corredizo",
+          ],
+          tabs: {
+            energetica: {
+              title: "Prosperidad y Armonía",
+              p1: "El Jade es un símbolo ancestral de pureza, serenidad y abundancia. Atrae la buena suerte, promueve la autosuficiencia y calma la mente liberando pensamientos negativos.",
+              p2: "Conectado al chakra del corazón, fomenta las relaciones armónicas y ayuda a integrar la mente con el cuerpo para tomar decisiones sabias.",
+              quote:
+                '"Atrae la prosperidad y cultiva la paz en tu vida diaria."',
+            },
+            especificaciones: {
+              title: "Especificaciones Técnicas",
+              p1: "Selección de cuentas de Jade de tonos verdes naturales y tacto suave. Pulido de alta calidad para conservar su lustre característico.",
+              p2: "Tejido artesanal reforzado para asegurar máxima durabilidad en el uso cotidiano.",
+              quote:
+                '"Simbolismo ancestral con confección artesanal resistente."',
+            },
+            cuidado: {
+              title: "Cuidado y Limpieza",
+              p1: "Límpialo de manera habitual con un paño suave húmedo y un jabón neutro si es necesario.",
+              p2: "Para la limpieza energética, puedes colocarlo sobre la tierra en una maceta o jardín durante unas horas para recargar su conexión natural.",
+              quote:
+                '"Mantén su energía renovada conectándola con la naturaleza."',
+            },
+          },
+        },
+        {
+          id: "jaspe-paisaje",
+          title: "Jaspe Paisaje",
+          price: 40.0,
+          tag: "Conexión y Estabilidad",
+          reviews: "(22 Reseñas)",
+          images: [
+            "imagenesproducto/Jaspe Paisaje/Jaspe.png",
+            "imagenesproducto/Jaspe Paisaje/1.jpeg",
+            "imagenesproducto/Jaspe Paisaje/3.jpg",
+          ],
+          shortDesc:
+            'Pulsera artesanal enfocada en la <span class="text-primary font-semibold">conexión con la tierra y la paz interior</span>. Cuentas naturales de Jaspe Paisaje con patrones únicos que inspiran creatividad y calma.',
+          specs: [
+            "Piedra: Jaspe Paisaje Natural de 10mm",
+            "Tejido: Hilo encerado de alta resistencia",
+            "Ajustable: Sistema de nudo corredizo",
+          ],
+          tabs: {
+            energetica: {
+              title: "Conexión Terrenal y Creatividad",
+              p1: "El Jaspe Paisaje es conocido como la piedra de la Madre Tierra. Sus vetas y formas evocan paisajes naturales, ayudando a sintonizar con la sabiduría del entorno y aportando una profunda sensación de arraigo.",
+              p2: "Estimula la creatividad, alivia el estrés y saca a la superficie sentimientos o pensamientos bloqueados para poder procesarlos con serenidad.",
+              quote:
+                '"Reconecta con la naturaleza y encuentra estabilidad en tu camino."',
+            },
+            especificaciones: {
+              title: "Especificaciones Técnicas",
+              p1: "Cada cuenta presenta un diseño natural irrepetible con tonalidades terrosas y pulido suave.",
+              p2: "Tejido reforzado pensado para acompañarte en tu rutina diaria sin perder resistencia.",
+              quote:
+                '"Diseño único creado por la naturaleza, confeccionado a mano."',
+            },
+            cuidado: {
+              title: "Cuidado y Limpieza",
+              p1: "Límpiala energéticamente colocándola sobre la tierra o pasándola por el humo de incienso de sándalo.",
+              p2: "Para limpiarla físicamente, basta con un paño seco o ligeramente húmedo. Evita la exposición prolongada a líquidos abrasivos.",
+              quote:
+                '"Cuida sus tonos terrosos manteniéndola protegida de químicos."',
+            },
+          },
+        },
+        {
+          id: "piedra-lunar",
+          title: "Piedra Lunar",
+          price: 40.0,
+          tag: "Intuición y Feminidad",
+          reviews: "(31 Reseñas)",
+          images: [
+            "imagenesproducto/Piedra Luna/piedra Lunar.png",
+            "imagenesproducto/Piedra Luna/1.jpeg",
+            "imagenesproducto/Piedra Luna/3.jpg",
+          ],
+          shortDesc:
+            'Pulsera artesanal enfocada en la <span class="text-primary font-semibold">intuición, el equilibrio emocional y los nuevos comienzos</span>. Cuentas naturales de Piedra Lunar con destellos únicos que aportan calma.',
+          specs: [
+            "Piedra: Piedra Lunar Natural de 10mm",
+            "Tejido: Hilo encerado de alta resistencia",
+            "Ajustable: Sistema de nudo corredizo",
+          ],
+          tabs: {
+            energetica: {
+              title: "Intuición y Nuevos Comienzos",
+              p1: "La Piedra Lunar está fuertemente vinculada con la luna y la intuición. Es la piedra de los nuevos comienzos, altamente reflexiva y recordándote que todo forma parte de un ciclo de cambio.",
+              p2: "Calma las reacciones excesivas ante las situaciones y las emociones, equilibrando las energías masculinas y femeninas y fomentando la empatía.",
+              quote:
+                '"Sintoniza con tus ritmos naturales y abraza la serenidad interior."',
+            },
+            especificaciones: {
+              title: "Especificaciones Técnicas",
+              p1: "Selección de gemas con suave iridiscencia y destellos característicos de la adularia natural. Pulido delicado y redondeado.",
+              p2: "Tejido reforzado de alta durabilidad adaptado para acompañarte a diario.",
+              quote: '"Elegancia mística con un acabado artesanal resistente."',
+            },
+            cuidado: {
+              title: "Cuidado y Limpieza",
+              p1: "Para recargar su energía de forma óptima, déjala reposar bajo la luz de la luna llena durante toda la noche.",
+              p2: "Evita golpes fuertes y limpia su superficie únicamente con un paño suave y seco o ligeramente humedecido.",
+              quote: '"Nutre su destello natural con la luz de la luna."',
+            },
+          },
+        },
+      ];
+
+      let currentProduct = catalogProducts[0]; // Producto por defecto
+
+      // Cargar datos dinámicos según el parámetro ?id= de la URL
+      function loadProductFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        const productId = params.get("id");
+
+        if (productId) {
+          const found = catalogProducts.find(
+            (p) =>
+              p.id === productId ||
+              p.title.toLowerCase() ===
+                decodeURIComponent(productId).toLowerCase(),
+          );
+          if (found) {
+            currentProduct = found;
+          }
+        }
+
+        // Insertar datos en la página
+        document.getElementById("breadcrumb-product-name").textContent =
+          currentProduct.title;
+        document.getElementById("product-title").textContent =
+          currentProduct.title;
+        document.getElementById("product-price").textContent =
+          `S/ ${currentProduct.price.toFixed(2)}`;
+        document.getElementById("product-tag").textContent = currentProduct.tag;
+        document.getElementById("product-reviews").textContent =
+          currentProduct.reviews;
+        document.getElementById("product-short-desc").innerHTML =
+          currentProduct.shortDesc;
+
+        if (currentProduct.specs[0])
+          document.getElementById("spec-1").textContent =
+            currentProduct.specs[0];
+        if (currentProduct.specs[1])
+          document.getElementById("spec-2").textContent =
+            currentProduct.specs[1];
+        if (currentProduct.specs[2])
+          document.getElementById("spec-3").textContent =
+            currentProduct.specs[2];
+
+        // Cargar Imágenes
+        if (currentProduct.images[0])
+          document.getElementById("main-product-image").src =
+            currentProduct.images[0];
+        if (currentProduct.images[0])
+          document.getElementById("thumb-1").src = currentProduct.images[0];
+        if (currentProduct.images[1])
+          document.getElementById("thumb-2").src = currentProduct.images[1];
+        if (currentProduct.images[2])
+          document.getElementById("thumb-3").src = currentProduct.images[2];
+
+        // Cargar Pestaña activa
+        showTab("energetica");
+      }
+
+      // 1. CONTROL DE CANTIDAD
+      function increment() {
+        const input = document.getElementById("quantity");
+        input.value = parseInt(input.value) + 1;
+      }
+
+      function decrement() {
+        const input = document.getElementById("quantity");
+        if (parseInt(input.value) > 1) {
+          input.value = parseInt(input.value) - 1;
+        }
+      }
+
+      // 2. ACTUALIZAR CONTADOR DE CARRITO
+      function updateCartBadge() {
+        const cart = JSON.parse(localStorage.getItem("vitalith_cart")) || [];
+        const totalItems = cart.reduce(
+          (sum, item) => sum + (item.quantity || 1),
+          0,
+        );
+        const badge = document.getElementById("cart-count");
+
+        if (badge) {
+          if (totalItems > 0) {
+            badge.textContent = totalItems;
+            badge.classList.remove("hidden");
+          } else {
+            badge.classList.add("hidden");
+          }
+        }
+      }
+
+      // 3. CAMBIO DE IMAGEN EN GALERÍA
+      function changeMainImage(element) {
+        const mainImg = document.getElementById("main-product-image");
+        const clickedImg = element.querySelector("img");
+
+        if (mainImg && clickedImg) {
+          mainImg.src = clickedImg.src;
+          const allThumbs = element.parentElement.querySelectorAll("div");
+          allThumbs.forEach((thumb) => {
+            thumb.classList.remove("border-2", "border-primary");
+            thumb.classList.add("border", "border-outline-variant/20");
+          });
+          element.classList.remove("border-outline-variant/20");
+          element.classList.add("border-2", "border-primary");
+        }
+      }
+
+      // 4. FUNCIONALIDAD DE PESTAÑAS (TABS)
+      function showTab(key, element) {
+        const tabData = currentProduct.tabs;
+        const data = tabData[key] || tabData["energetica"];
+        if (!data) return;
+
+        document.getElementById("tab-title").textContent = data.title;
+        document.getElementById("tab-p1").textContent = data.p1;
+        document.getElementById("tab-p2").textContent = data.p2;
+        document.getElementById("tab-quote").textContent = data.quote;
+
+        if (element) {
+          const buttons = element.parentElement.querySelectorAll("button");
+          buttons.forEach((btn) => {
+            btn.className =
+              "pb-4 font-headline font-bold text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap";
+          });
+          element.className =
+            "pb-4 font-headline font-bold text-primary border-b-2 border-primary whitespace-nowrap";
+        }
+      }
+
+      // 5. OBTENER DATOS DEL PRODUCTO
+      function getProductData() {
+        const qty = parseInt(document.getElementById("quantity").value) || 1;
+        const mainImgSrc =
+          document.getElementById("main-product-image")?.src ||
+          currentProduct.images[0];
+
+        return {
+          id: currentProduct.id,
+          title: currentProduct.title,
+          price: currentProduct.price,
+          image: mainImgSrc,
+          tag: "HECHO A MANO",
+          quantity: qty,
+        };
+      }
+
+      // 6. AÑADIR AL CARRITO
+      function addToCart(showNotice = true) {
+        const product = getProductData();
+        let cart = JSON.parse(localStorage.getItem("vitalith_cart")) || [];
+
+        const existingIndex = cart.findIndex(
+          (item) => item.title === product.title,
+        );
+
+        if (existingIndex > -1) {
+          cart[existingIndex].quantity += product.quantity;
+        } else {
+          cart.push(product);
+        }
+
+        localStorage.setItem("vitalith_cart", JSON.stringify(cart));
+        updateCartBadge();
+
+        if (showNotice) {
+          alert(
+            "¡" +
+              product.quantity +
+              " unidad(es) de " +
+              product.title +
+              " añadida(s) al carrito!",
+          );
+        }
+      }
+
+      // 7. COMPRAR AHORA
+      function buyNowDirect() {
+        const product = getProductData();
+        const total = (product.price * product.quantity).toFixed(2);
+
+        let text = "Hola VITALITH, me gustaría comprar directamente:\n\n";
+        text += `• ${product.title} x${product.quantity} - S/ ${total}\n\n`;
+        text += `*Total a pagar: S/ ${total}*`;
+
+        window.open(
+          `https://wa.me/51900000000?text=${encodeURIComponent(text)}`,
+          "_blank",
+        );
+      }
+
+      // SUSCRIPCIÓN AL BOLETÍN INFORMATIVO
+      function subscribeNewsletter(event) {
+        event.preventDefault();
+        const emailInput = document.getElementById("newsletter-email");
+        const companyEmail = "contacto.vitalith@gmail.com";
+
+        if (emailInput && emailInput.value) {
+          const userEmail = emailInput.value;
+          const subject = encodeURIComponent(
+            "Suscripción al Boletín Informativo - VITALITH",
+          );
+          const body = encodeURIComponent(
+            `Hola equipo de VITALITH,\n\nMe gustaría suscribirme a su boletín informativo.\n\nMi correo de contacto es: ${userEmail}`,
+          );
+
+          window.open(
+            `mailto:${companyEmail}?subject=${subject}&body=${body}`,
+            "_blank",
+          );
+          emailInput.value = "";
+        }
+      }
+
+      // Inicialización
+      document.addEventListener("DOMContentLoaded", () => {
+        loadProductFromUrl();
+        updateCartBadge();
+      });
+
+      window.addEventListener("scroll", () => {
+        const header = document.querySelector("header");
+        if (header) {
+          if (window.scrollY > 20) {
+            header.classList.add("shadow-md");
+          } else {
+            header.classList.remove("shadow-md");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VITALITH - Carrito de Compras</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      try {
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                primary: "#006c49",
+                "on-primary": "#ffffff",
+                surface: "#faf6f5",
+                "on-surface": "#1a1c1c",
+                "on-surface-variant": "#3c4a42",
+                "surface-container-lowest": "#ffffff",
+                "outline-variant": "#bbcabf",
+              },
+            },
+          },
+        };
+      } catch (_e) {}
+    </script>
+  </head>
+  <body
+    class="bg-[#faf6f5] text-[#1a1c1c] font-sans antialiased min-h-screen flex flex-col"
+  >
+    <!-- Header Corrección: Agregado flex items-center justify-between al contenedor principal -->
+    <header
+      class="w-full bg-[#faf6f5] border-b border-gray-200 py-4 px-8 sticky top-0 z-50 flex items-center justify-between"
+    >
+      <div class="flex items-center gap-3">
+        <a
+          href="../vitalith_inicio_y_cat_logo/index.html"
+          class="flex items-center gap-3 active:scale-95 transition-transform"
+        >
+          <!-- Logo de la tienda -->
+          <img
+            src="Logo.png"
+            alt="VITALITH Logo"
+            class="h-8 md:h-10 w-auto object-contain"
+          />
+
+          <!-- Nombre VITALITH -->
+          <span
+            class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold tracking-tight text-primary"
+          >
+            VITALITH
+          </span>
+        </a>
+      </div>
+
+      <nav class="hidden md:flex gap-8 text-gray-700 font-medium">
+        <a
+          href="../vitalith_inicio_y_cat_logo/index.html"
+          class="hover:text-[#006c49]"
+          >Inicio</a
+        >
+        <a
+          href="../vitalith_inicio_y_cat_logo/index.html#catalogo"
+          class="hover:text-[#006c49]"
+          >Catálogo</a
+        >
+        <a
+          href="../vitalith_inicio_y_cat_logo/index.html#resenas"
+          class="hover:text-[#006c49]"
+          >Reseñas</a
+        >
+        <a
+          href="../vitalith_inicio_y_cat_logo/index.html#nosotros"
+          class="hover:text-[#006c49]"
+          >Nosotros</a
+        >
+        <a
+          href="../vitalith_inicio_y_cat_logo/index.html#contacto"
+          class="hover:text-[#006c49]"
+          >Contacto</a
+        >
+      </nav>
+
+      <div class="relative flex items-center justify-center">
+        <span class="material-symbols-outlined text-[#006c49] text-2xl"
+          >shopping_cart</span
+        >
+        <span
+          id="header-badge"
+          class="absolute -top-2 -right-2 bg-[#006c49] text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold"
+          >0</span
+        >
+      </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="max-w-6xl mx-auto px-4 py-12 flex-1 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        <!-- Lista de Productos -->
+        <div class="lg:col-span-2 flex flex-col gap-4">
+          <div id="cart-list" class="flex flex-col gap-4">
+            <!-- Los productos se cargarán aquí dinámicamente -->
+          </div>
+
+          <a
+            href="../vitalith_inicio_y_cat_logo/index.html#catalogo"
+            class="inline-flex items-center gap-2 text-[#006c49] font-bold mt-4 hover:underline"
+          >
+            <span class="material-symbols-outlined">arrow_back</span>
+            Seguir comprando
+          </a>
+        </div>
+
+        <!-- Resumen de Compra -->
+        <div
+          class="bg-[#fdf8f7] border border-red-100/50 p-8 rounded-3xl shadow-sm flex flex-col gap-6"
+        >
+          <h2 class="text-2xl font-bold text-[#1a1c1c]">Resumen de compra</h2>
+
+          <div class="flex justify-between items-center text-gray-700">
+            <span>Subtotal</span>
+            <span id="summary-subtotal" class="font-bold text-black"
+              >S/ 0.00</span
+            >
+          </div>
+
+          <div class="flex justify-between items-start text-gray-700 text-sm">
+            <span>Precio de envío</span>
+            <div class="text-right">
+              <span class="font-bold text-black block"
+                >Calculado al checkout</span
+              >
+              <span
+                class="text-xs text-gray-400 block italic max-w-[180px] mt-1"
+                >* Envíos rápidos en Lima (24-48h). Envíos a Provincias vía Olva
+                o Shalom.</span
+              >
+            </div>
+          </div>
+
+          <hr class="border-gray-200" />
+
+          <div class="flex justify-between items-baseline">
+            <span class="text-lg font-bold text-black">Total</span>
+            <div class="text-right">
+              <span
+                id="summary-total"
+                class="text-3xl font-extrabold text-[#006c49]"
+                >S/ 0.00</span
+              >
+              <span
+                class="text-[10px] text-gray-400 block tracking-widest uppercase"
+                >INCLUYE IGV</span
+              >
+            </div>
+          </div>
+
+          <button
+            onclick="checkoutWhatsApp()"
+            class="w-full bg-[#006c49] text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#005236] transition-all shadow-md"
+          >
+            Finalizar Compra
+            <span class="material-symbols-outlined text-sm">lock</span>
+          </button>
+
+          <div class="text-center">
+            <span
+              class="text-xs font-bold text-gray-400 uppercase tracking-wider block mb-2"
+              >MÉTODOS DE PAGO SEGUROS</span
+            >
+            <div
+              class="flex justify-center gap-4 text-xs font-semibold text-gray-600"
+            >
+              <span>Yape</span>
+              <span>Plin</span>
+              <span>Tarjeta</span>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#fbeee9]/60 p-4 rounded-2xl flex items-center gap-3 border border-orange-100"
+          >
+            <div
+              class="bg-orange-400 text-white rounded-md p-1 flex items-center justify-center"
+            >
+              <span class="material-symbols-outlined text-sm">check</span>
+            </div>
+            <p class="text-xs text-gray-600 leading-tight">
+              Tu compra está protegida por encriptación de grado bancario.
+              Artesanía 100% garantizada.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- SCRIPT DE SINCRONIZACIÓN Y RENDERIZADO -->
+    <script>
+      function getCart() {
+        return JSON.parse(localStorage.getItem("vitalith_cart")) || [];
+      }
+
+      function saveCart(cart) {
+        localStorage.setItem("vitalith_cart", JSON.stringify(cart));
+        renderCart();
+      }
+
+      function changeQty(index, delta) {
+        let cart = getCart();
+        cart[index].quantity += delta;
+        if (cart[index].quantity <= 0) {
+          cart.splice(index, 1);
+        }
+        saveCart(cart);
+      }
+
+      function removeItem(index) {
+        let cart = getCart();
+        cart.splice(index, 1);
+        saveCart(cart);
+      }
+
+      function renderCart() {
+        const cart = getCart();
+        const container = document.getElementById("cart-list");
+        const subtotalEl = document.getElementById("summary-subtotal");
+        const totalEl = document.getElementById("summary-total");
+        const badgeEl = document.getElementById("header-badge");
+
+        const totalItems = cart.reduce((sum, i) => sum + (i.quantity || 1), 0);
+        badgeEl.innerText = totalItems;
+
+        if (cart.length === 0) {
+          container.innerHTML = `
+            <div class="bg-white p-8 rounded-3xl text-center border border-gray-100 shadow-sm">
+              <p class="text-gray-500 font-medium">Tu carrito está vacío.</p>
+            </div>
+          `;
+          subtotalEl.innerText = "S/ 0.00";
+          totalEl.innerText = "S/ 0.00";
+          return;
+        }
+
+        let total = 0;
+        container.innerHTML = cart
+          .map((item, index) => {
+            const itemPrice = Number(item.price) || 0;
+            const itemQty = Number(item.quantity) || 1;
+            const itemTotal = itemPrice * itemQty;
+            total += itemTotal;
+
+            // Corrección de la ruta de la imagen según la clave guardada en localStorage
+            let imgSrc =
+              item.image ||
+              item.img ||
+              item.imagen ||
+              "https://via.placeholder.com/150";
+            if (
+              imgSrc &&
+              !imgSrc.startsWith("http") &&
+              !imgSrc.startsWith("data:") &&
+              !imgSrc.startsWith("../")
+            ) {
+              imgSrc = "../vitalith_inicio_y_cat_logo/" + imgSrc;
+            }
+
+            return `
+            <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm flex items-center justify-between gap-4">
+              <div class="flex items-center gap-6">
+                <img src="${imgSrc}" alt="${item.title || item.nombre || "Producto"}" class="w-24 h-24 object-cover rounded-2xl">
+                <div class="flex flex-col gap-2">
+                  <h3 class="text-xl font-bold text-black">${item.title || item.nombre || "Producto"}</h3>
+                  <span class="inline-block px-3 py-0.5 bg-[#e2f7ed] text-[#006c49] text-[10px] font-bold rounded-md uppercase tracking-wider w-max">
+                    ${item.tag || "ARTESANAL"}
+                  </span>
+                  <div class="flex items-center gap-3 bg-[#fbeee9] rounded-xl px-3 py-1 w-max mt-1">
+                    <button onclick="changeQty(${index}, -1)" class="text-gray-600 font-bold hover:text-black">-</button>
+                    <span class="font-bold text-sm min-w-[12px] text-center">${itemQty}</span>
+                    <button onclick="changeQty(${index}, 1)" class="text-gray-600 font-bold hover:text-black">+</button>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col items-end justify-between h-24">
+                <button onclick="removeItem(${index})" class="text-gray-400 hover:text-red-500 transition-colors">
+                  <span class="material-symbols-outlined text-lg">delete</span>
+                </button>
+                <span class="text-xl font-bold text-[#006c49]">S/ ${itemTotal.toFixed(2)}</span>
+              </div>
+            </div>
+          `;
+          })
+          .join("");
+
+        subtotalEl.innerText = `S/ ${total.toFixed(2)}`;
+        totalEl.innerText = `S/ ${total.toFixed(2)}`;
+      }
+
+      function checkoutWhatsApp() {
+        const cart = getCart();
+        if (cart.length === 0) return alert("Tu carrito está vacío.");
+        let text = "Hola VITALITH, me gustaría realizar el pedido de:\n\n";
+        let total = 0;
+        cart.forEach((item) => {
+          const itemPrice = Number(item.price) || 0;
+          const itemQty = Number(item.quantity) || 1;
+          const itemTitle = item.title || item.nombre || "Producto";
+          text += `• ${itemTitle} x${itemQty} - S/ ${(itemPrice * itemQty).toFixed(2)}\n`;
+          total += itemPrice * itemQty;
+        });
+        text += `\n*Total a pagar: S/ ${total.toFixed(2)}*`;
+        window.open(
+          `https://wa.me/51900000000?text=${encodeURIComponent(text)}`,
+          "_blank",
+        );
+      }
+
+      window.addEventListener("DOMContentLoaded", renderCart);
+    </script>
+  </body>
+</html>
